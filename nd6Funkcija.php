@@ -33,20 +33,29 @@ echo '3 uzduotis';
 echo '<br><br>';
 
 $string = md5(time());
-$numbers = '';
-for ($i=0; $i < strlen($string); $i++) {
-    if (ctype_digit($string[$i])) {
-    $numbers .= $string[$i];
-    }
-}
-    echo "<h1> $string <br></h1>";
-    function countLetters($matches) {
-        return "<h1>".$matches ."</h1>";
-        }
-        $pattern = '!\d+!';
-        print_r(preg_replace_callback($pattern, function ($matches) {
-        return countLetters($matches[0]);
-        }, $string));
+echo $string.'<br>';
+
+$string = preg_replace_callback('/\d+/', function($matches) {
+    _d($matches);
+    return echoText(current($matches));
+}, $string);
+
+echo $string;
+
+// $numbers = '';
+// for ($i=0; $i < strlen($string); $i++) {
+//     if (ctype_digit($string[$i])) {
+//     $numbers .= $string[$i];
+//     }
+// }
+//     echo "<h1> $string <br></h1>";
+//     function countLetters($matches) {
+//         return "<h1>".$matches ."</h1>";
+//         }
+//         $pattern = '!\d+!';
+//         print_r(preg_replace_callback($pattern, function ($matches) {
+//         return countLetters($matches[0]);
+//         }, $string));
 
 echo '<br><br>';
 echo '-------------------------------------------------------------------';
@@ -172,8 +181,46 @@ echo '<br>';
 echo '9 uzduotis';
 echo '<br><br>';
 
+// $array = [];
+// for($i = 0; $i <3; $i++){
+//     $array[$i] = rand(1, 33);
+// }
+// print_r($array);
+// $arrayCheck($array);
+// function $arrayCheck($arr){
+//     foreach($arr as $value){
+//         $random = rand(1, 33);
+//         if(!(task4($value))) {
+//             $array[] = $random;
+//         }
+//     }
+// }
 
-   
+$newArr = [];
+
+for ($i = 0; $i < 3; $i++) {
+    $random = rand(1, 33);
+    $newArr[] = $random;
+}
+
+function check(&$array)
+{
+    $arr = array_slice($array, -3, 3, true);
+    // print_r('$Arr slice reiksmes: <br>');
+    // print_r($arr);
+    foreach ($arr as $value) {
+        if (task4($value)) {
+            $random = rand(1, 33);
+            $array[] = $random;
+            check($array);
+            break;
+        }
+    }
+}
+check($newArr);
+
+print_r($newArr);
+
 echo '<br><br>';
 echo '-------------------------------------------------------------------';
 echo '<br>';
