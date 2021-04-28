@@ -5,6 +5,7 @@ if((!empty($_GET)) && (empty($_POST))){
     $color = 'green';
 } elseif(!empty($_POST)){
    $color = 'yellow';
+   header('Location: http://localhost/bebras/nd7-7.php');
 }
 ?>
 

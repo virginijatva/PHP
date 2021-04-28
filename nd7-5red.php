@@ -1,6 +1,5 @@
 <?php
 
-
 if(isset($_GET['web'])){
     if($_GET['web'] == 2){
     header('Location: http://localhost/bebras/nd7-5blue.php');
