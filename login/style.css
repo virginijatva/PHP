@@ -1,0 +1,28 @@
+.menu{
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+    height: 100px;
+    align-items: center;
+}
+
+.menu a{
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    font-size: 70px;
+    letter-spacing: 5px;
+    height: calc(100vh - 100px);
+    width: 100vw;
+    align-items: center;
+}
+
+main.login{
+    font-size: 100%;
+}
