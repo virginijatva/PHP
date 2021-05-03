@@ -6,9 +6,12 @@ $clients = json_decode($array_string);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['searchAccount'])) {
         foreach ($clients as $key => $val) {
+            // jei kliento saskaita tuscia
             if ($val->Balance == 0) {
+                // ir jei ieskomo kliento account numeris sutampa su masyve rasto kliento saskaita, galime ja istrinti, unset
                 if ($val->Account_number == $_POST['searchAccount']) {
                     unset($clients[$key]);
+                    // kai istrinam, perrasom likusi klientu sarasa i duombaze
                     $newList = json_encode(array_values($clients), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                     file_put_contents('bank.json', $newList);
                     $_SESSION['delete'] = 'You successfully deleted this account<br>!';
@@ -71,6 +74,7 @@ usort($clients, function ($a, $b) {
                 <input type=\"hidden\" name=\"searchAccount\" value=\"$val->Account_number\">
                 <button type=\"submit\">DELETE ACCOUNT</button><br>
                     </form>
+                    <! -- Prie linku pridedam tai, ka noresim perduoti i kitus puslapius, pvz addfunds -->
                     <a href=\"http://localhost/bebras/bankas/addFunds.php?searchAccount=$val->Account_number&name=$val->Name&lastname=$val->Last_name&balance=$val->Balance\">Add funds</a><br>
                     <a href=\"http://localhost/bebras/bankas/deductFunds.php?searchAccount=$val->Account_number&name=$val->Name&lastname=$val->Last_name&balance=$val->Balance\">Deduct funds</a><br>
                 </td></tr>";

@@ -9,13 +9,18 @@ $bal = $_GET['balance'];
 $get = $_GET['searchAccount'];
 foreach ($clients as $key => $val) {
     if (isset($_POST['addFunds'])) {
+        // lygina, ar sutampa kliento account su rasto sarase kliento account'u
         if ($val->Account_number == $get) {
+            // jei netuscia ir nemazesne ivesta suma uz nuli, vykdom:
             if (!empty($_POST['addFunds']) && !($_POST['addFunds'] < 0)) {
                 (float) $val->Balance += (float) $_POST['addFunds'];
                 $bal = $val->Balance;
+                // nauja gauta balance irasom i json file
                 $newList = json_encode(array_values($clients), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                 file_put_contents('bank.json', $newList);
+                // success zinute
                 $_SESSION['addFunds'] = 'You successfully added funds to this account!<br>';
+                // prie link'o pridedam nauja name, lname, balance, kad atsinaujintu ekrane
                 header("Location: http://localhost/bebras/bankas/addFunds.php?searchAccount=$get&name=$nam&lastname=$last&balance=$bal");
                 die;
                 break;
@@ -25,7 +30,7 @@ foreach ($clients as $key => $val) {
         }
     }
 }
-
+// unsetinam isvesta i ekrana zinute, kad perkrovus jos nebutu
 $rezultatas = $_SESSION['addFunds'] ?? '';
 unset($_SESSION['addFunds']);
 ?>
