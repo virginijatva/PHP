@@ -1,0 +1,62 @@
+.bank-name {
+    font-size: 30px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.menu {
+    text-align: center;
+    margin: 100px 0;
+    font-size: 20px;
+}
+
+.menu-links {
+    text-align: center;
+}
+
+.rezultatas {
+    display: inline;
+}
+
+.accounts-table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.accounts-table>td,
+th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 6px;
+}
+
+.accounts-table>table {
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.account>h1 {
+    text-align: center;
+}
+
+.new-account>h1 {
+    text-align: center;
+}
+
+.account>h2 {
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.addtable {
+    margin: auto;
+    margin-top: 70px;
+    text-align: center;
+}

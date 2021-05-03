@@ -1,0 +1,30 @@
+[
+    {
+        "Name": "Vallery",
+        "Last_name": "Adams",
+        "Account_number": "LT377350010002858143",
+        "IDnumber": "46107128573",
+        "Balance": 2924
+    },
+    {
+        "Name": "Bobby",
+        "Last_name": "Burger",
+        "Account_number": "LT377350010001424212",
+        "IDnumber": "37307208212",
+        "Balance": 189
+    },
+    {
+        "Name": "Marlene",
+        "Last_name": "Oprah",
+        "Account_number": "LT377350010004558621",
+        "IDnumber": "41203069489",
+        "Balance": 180
+    },
+    {
+        "Name": "Andy",
+        "Last_name": "Philips",
+        "Account_number": "LT377350010008558366",
+        "IDnumber": "32609119524",
+        "Balance": 0
+    }
+]
