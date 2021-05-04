@@ -1,15 +1,20 @@
 <?php
 
-class Bebras
+class Bebras extends River
 {
     public $color = 'brown';
     private $tail = 45;
-
+    public $name = 'Nemunas';
+    public static $h2o = 'pienas';
     private static $dam = 'wooden';
 
+    private static $bebroObjektas;
+
     //konstruktorius, kuriam galima kintamajam priskirti savybes reiksme by default
-    public function __construct($param)
+    private function __construct($param)
     {
+        // $this->name = 'Amazon';
+
         echo '<br>Konstruktorius<br>';
         if (is_string($param)) {
             $this->defaultColor($param);
@@ -17,6 +22,16 @@ class Bebras
         if (is_integer($param)) {
             $this->defaultTail($param);
         }
+    }
+
+    public static function makeBebras($params)
+    {
+        return self::$bebroObjektas ?? self::$bebroObjektas = new self($params); //jei nera sukurto bebro objekto ?? ji sukuriu
+    }
+
+    public function __destruct()
+    {
+        echo '<br>Bebras mire...<br>';
     }
 
     private function defaultColor(string $color)
