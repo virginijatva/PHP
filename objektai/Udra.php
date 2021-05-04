@@ -16,4 +16,9 @@ class Udra extends River
         River::redRiver();
         echo '<div style="color:blue">'.$this->name.'</div>';
     }
+
+
+    public function someoneSaysSomething(string $aa): void{
+        echo '<div style="color:orange">As Udra ir sakau Titititititi!</div>';
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-class Bebras extends River
+abstract class Bebras extends River
 {
     public $color = 'brown';
     private $tail = 45;
@@ -28,6 +28,12 @@ class Bebras extends River
     {
         return self::$bebroObjektas ?? self::$bebroObjektas = new self($params); //jei nera sukurto bebro objekto ?? ji sukuriu
     }
+
+
+    // public function someoneSaysSomething(string $aa): void
+    // {
+    //     echo '<div style="color:orange">As bebras ir sakau Opaaa!</div>';
+    // }
 
     public function __destruct()
     {
