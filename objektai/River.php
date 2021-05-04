@@ -1,6 +1,6 @@
 <?php
 
-abstract class River
+class River
 {
     private $name = 'Volga'; //jei public, Bebras gali overwrite'inti, jei private, negali, jei protected - kreipiantis is isores jo niekas nemato
 
@@ -13,12 +13,12 @@ abstract class River
 
     public function redRiver()
     {
-        $say = '';
-        $this->someoneSaysSomething($say);
+        // $say = '';
+        // $this->someoneSaysSomething($say);
         echo '<div style="color:orange">' . self::$h2o . '</div>';
         echo '<div style="color:lightblue">' . static::$h2o . '</div>';
         echo '<div style="color:red">' . $this->name . '</div>';
     }
 
-    abstract public function someoneSaysSomething(string $say) : void;
+    // abstract public function someoneSaysSomething(string $say) : void;
 }

@@ -1,11 +1,14 @@
 <?php
 
+require __DIR__ .'/Interfaceas.php';
 require __DIR__ .'/Medis.php';
 require __DIR__ .'/River.php';
 require __DIR__ .'/Bebras.php';
 require __DIR__ .'/Udra.php';
 require __DIR__ .'/BebroVaikas.php';
 
+echo Interfaceas::LABAS;
+echo '<br>';
 //objekto kurimas:
 // $zveris1 = Bebras::makeBebras(12); // galima rasyti ir be skliausteliu
 // $zveris2 = Bebras::makeBebras('yellow');

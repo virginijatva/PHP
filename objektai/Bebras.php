@@ -1,6 +1,6 @@
 <?php
 
-abstract class Bebras extends River
+class Bebras extends River
 {
     public $color = 'brown';
     private $tail = 45;
