@@ -1,5 +1,7 @@
 <?php
 
+namespace Long\Long\Long;
+
 class River
 {
     private $name = 'Volga'; //jei public, Bebras gali overwrite'inti, jei private, negali, jei protected - kreipiantis is isores jo niekas nemato

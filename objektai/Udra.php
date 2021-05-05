@@ -1,5 +1,7 @@
 <?php
 
+use Long\Long\Long\River;
+
 class Udra extends River
 {
     public $name = "Sesupe";

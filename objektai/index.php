@@ -1,11 +1,58 @@
 <?php
 
-require __DIR__ .'/Interfaceas.php';
-require __DIR__ .'/Medis.php';
-require __DIR__ .'/River.php';
-require __DIR__ .'/Bebras.php';
-require __DIR__ .'/Udra.php';
-require __DIR__ .'/BebroVaikas.php';
+use Zveris\Bebras;
+
+// require __DIR__ .'/Tree.php';
+// require __DIR__ .'/Interfaceas.php';
+// require __DIR__ .'/Medis.php';
+// require __DIR__ .'/River.php';
+// require __DIR__ .'/Bebras.php';
+// require __DIR__ .'/Udra.php';
+// require __DIR__ .'/BebroVaikas.php';
+
+require __DIR__ .'/vendor/autoload.php';
+
+// spl_autoload_register(function ($class) {
+//     $prefix = 'Zveris\\';
+//     $base_dir = __DIR__ . '/';
+//     $len = strlen($prefix);
+//     if (strncmp($prefix, $class, $len) !== 0) {
+//         return;
+//     }
+//     $relative_class = substr($class, $len);
+//     $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+//     if (file_exists($file)) {
+//         require $file;
+//     }
+// });
+
+// spl_autoload_register(function ($class) {
+//     $prefix = '';
+//     $base_dir = __DIR__ . '/';
+//     $len = strlen($prefix);
+//     if (strncmp($prefix, $class, $len) !== 0) {
+//         return;
+//     }
+//     $relative_class = substr($class, $len);
+//     $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+//     if (file_exists($file)) {
+//         require $file;
+//     }
+// });
+
+// spl_autoload_register(function ($class) {
+//     $prefix = 'Long\\Long\\Long\\';
+//     $base_dir = __DIR__ . '/';
+//     $len = strlen($prefix);
+//     if (strncmp($prefix, $class, $len) !== 0) {
+//         return;
+//     }
+//     $relative_class = substr($class, $len);
+//     $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+//     if (file_exists($file)) {
+//         require $file;
+//     }
+// });
 
 echo Interfaceas::LABAS;
 echo '<br>';

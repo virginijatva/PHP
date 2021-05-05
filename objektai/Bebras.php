@@ -1,5 +1,9 @@
 <?php
 
+namespace Zveris;
+
+use Long\Long\Long\River;
+
 class Bebras extends River
 {
     public $color = 'brown';
