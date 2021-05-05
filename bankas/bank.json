@@ -1,1 +1,44 @@
-[{"Name":"Vallery","Last_name":"Adams","Account_number":"LT377350010002858143","IDnumber":"46107128573","Balance":2924},{"Name":"Bobby","Last_name":"Burger","Account_number":"LT377350010001424212","IDnumber":"37307208212","Balance":10189},{"Name":"Marlene","Last_name":"Oprah","Account_number":"LT377350010004558621","IDnumber":"41203069489","Balance":180},{"Name":"Andy","Last_name":"Philips","Account_number":"LT377350010008558366","IDnumber":"32609119524","Balance":0},{"Name":"Katalina","Last_name":"Queen","Account_number":"LT377350010002941636","IDnumber":"44010148691","Balance":0}]
+[
+    {
+        "Name": "Vallery",
+        "Last_name": "Adams",
+        "Account_number": "LT377350010002858143",
+        "IDnumber": "46107128573",
+        "Balance": 1588.5
+    },
+    {
+        "Name": "Bobby",
+        "Last_name": "Burger",
+        "Account_number": "LT377350010001424212",
+        "IDnumber": "37307208212",
+        "Balance": 10178.1
+    },
+    {
+        "Name": "Marlene",
+        "Last_name": "Oprah",
+        "Account_number": "LT377350010004558621",
+        "IDnumber": "41203069489",
+        "Balance": 180
+    },
+    {
+        "Name": "Andy",
+        "Last_name": "Philips",
+        "Account_number": "LT377350010008558366",
+        "IDnumber": "32609119524",
+        "Balance": 0
+    },
+    {
+        "Name": "Katalina",
+        "Last_name": "Queen",
+        "Account_number": "LT377350010002941636",
+        "IDnumber": "44010148691",
+        "Balance": 0
+    },
+    {
+        "Name": "Testas",
+        "Last_name": "TEsteris",
+        "Account_number": "LT377350010007652869",
+        "IDnumber": "38312298594",
+        "Balance": 0
+    }
+]

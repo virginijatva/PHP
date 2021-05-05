@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (file_exists("$fileName")) {
             $array_string = file_get_contents('bank.json');
             $clients = json_decode($array_string);
-            echo "labas, atejom i puslapi su POST metodu paspaute submit mygtuk1";
             $client =
                 [
                     'Name' => $_POST['fname'],
@@ -112,29 +111,42 @@ function nameLength($name)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New account</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body class="new-account">
-    <div>
-        <a href="http://localhost/bebras/bankas/main.php">Main menu</a>
-        <a href="http://localhost/bebras/bankas/accounts.php">Existing accounts</a>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span class="navbar-brand">&#62;Bebrobank&#60;</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="http://localhost/bebras/bankas/main.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="http://localhost/bebras/bankas/accounts.php">Existing accounts</a>
+            </div>
+        </div>
+    </nav>
+
     <h3 class="rezultatas"><?= $rezultatas ?></h3>
-    <h1>&#62;Bebro bank&#60;</h1>
-    <form action="" method="POST">
-        <h3>Open new account</h3>
-        <label for="fname">Name:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname"><br>
-        <label for="account">Account number:</label><br>
-        <input type="text" disabled id="account" name="account" placeholder="<?= $account ?>"><br>
-        <label for="IDnumber">ID number:</label><br>
-        <input type="number" id="IDnumber" name="IDnumber"><br><br>
-        <input type="hidden" name="accountNumber" value="<?= $account ?>">
-        <input type="submit" value="Submit">
-    </form>
+    <h1>&#62;Bebrobank&#60;</h1>
+    <div class="newaccount">
+    <h3>Open new account</h3>
+        <form action="" method="POST">
+            
+            <label for="fname">Name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname"><br>
+            <label for="account">Account number:</label><br>
+            <input type="text" disabled id="account" name="account" placeholder="<?= $account ?>"><br>
+            <label for="IDnumber">ID number:</label><br>
+            <input type="number" id="IDnumber" name="IDnumber"><br><br>
+            <input type="hidden" name="accountNumber" value="<?= $account ?>">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
 
 </body>
 

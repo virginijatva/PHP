@@ -17,7 +17,7 @@ foreach ($clients as $key => $val) {
                     $bal1 = $val->Balance;
                     $newList = json_encode(array_values($clients), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                     file_put_contents('bank.json', $newList);
-                    $_SESSION['deductFunds'] = 'You successfully deducted funds to this account!<br>';
+                    $_SESSION['deductFunds'] = 'You successfully deducted funds from this account!<br>';
                     header("Location: http://localhost/bebras/bankas/deductFunds.php?searchAccount=$get1&name=$nam1&lastname=$last1&balance=$bal1");
                     die;
                     break;
@@ -44,17 +44,27 @@ unset($_SESSION['deductFunds']);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add funds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body class="add-funds">
-    <div>
-        <a href="http://localhost/bebras/bankas/main.php">Main menu</a>
-        <a href="http://localhost/bebras/bankas/accounts.php">Existing accounts</a>
-        <a href="http://localhost/bebras/bankas/newAccount.php">New account</a><br><br>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span class="navbar-brand" >&#62;Bebrobank&#60;</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="http://localhost/bebras/bankas/main.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="http://localhost/bebras/bankas/newAccount.php">New account</a>
+                <a class="nav-item nav-link" href="http://localhost/bebras/bankas/accounts.php">Existing accounts</a>
+            </div>
+        </div>
+    </nav>
+    
     <h3 class="rezultatas"><?= $rezultatas ?></h3>
-    <h1 style="text-align:center">&#62;Bebro bank&#60;</h1>
+    <h1 style="text-align:center">&#62;Bebrobank&#60;</h1>
     <div>
         <table class="addtable">
             <tr>
@@ -70,7 +80,7 @@ unset($_SESSION['deductFunds']);
                 <td>
                     <form action="./deductFunds.php?searchAccount=<?= $get1 ?>&name=<?= $_GET['name'] ?>&lastname=<?= $_GET['lastname'] ?>&balance=<?= $_GET['balance'] ?>" method="post">
                         <input type="text" name="deductFunds">
-                        <button type="submit">DEDUCT FUNDS</button>
+                        <button type="submit" class="btn btn-secondary">DEDUCT FUNDS</button>
                     </form>
                 </td>
             </tr>
